@@ -1055,6 +1055,29 @@
       .pt-photo-grid { grid-template-columns:repeat(2,1fr); }
     }
 
+    /* ── Portfolio on narrow screens: the arc line distorts badly when the
+       SVG's square viewBox gets stretched into a tall, narrow box, and the
+       zig-zag (flip) layouts squeeze their text columns down to almost
+       nothing — so collapse everything to a simple single-column stack. ── */
+    @media (max-width:700px) {
+      .pt-arc-svg { display:none; }
+
+      .pt-rn-profile,
+      .pt-rn-profile--flip { grid-template-columns:1fr; gap:2rem; }
+      .pt-rn-profile--flip .pt-rn-col1,
+      .pt-rn-profile--flip .pt-rn-col2,
+      .pt-rn-profile--flip .pt-rn-col1-text,
+      .pt-rn-profile--flip .pt-rn-col3-img { order:0; }
+      .pt-rn-col1 { flex-direction:column; align-items:center; text-align:center; gap:1rem; }
+      .pt-rn-col2 { align-items:center; text-align:center; }
+      .pt-rn-bottom-row { flex-direction:column; align-items:center; gap:1rem; }
+
+      .pt-film-header,
+      .pt-film-header--flip { flex-direction:column; align-items:flex-start; gap:1.5rem; }
+      .pt-film-header--flip .pt-film-quote,
+      .pt-film-header--flip .pt-film-title-wrap { order:0; text-align:left; }
+    }
+
     /* ════════════════════════════════════
        SKILLS
     ════════════════════════════════════ */
