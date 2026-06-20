@@ -1,0 +1,4 @@
+node_modules/
+.claude/
+deck-byd.pdf
+*.exe
